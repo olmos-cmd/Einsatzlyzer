@@ -10,6 +10,38 @@ Die aktuelle Version verbindet eine übersichtliche Datenerfassung im WordPress-
 
 **Einsatzlyzer 9.7.0**
 
+## Vorschau
+
+### Moderne Einsatzverwaltung im WordPress-Backend
+
+Übersichtliche Einsatzliste mit Vorschaubildern, Filtern, Statusanzeigen und Vollständigkeitsprüfung.
+
+[![Einsatzübersicht im Backend](docs/screenshots/admin-uebersicht.jpg)](docs/screenshots/admin-uebersicht.jpg)
+
+### Einsatzarchiv mit Übersichtskarte
+
+Alle gefilterten Einsätze können zusätzlich auf einer interaktiven OpenStreetMap-Karte dargestellt werden.
+
+[![Einsatzarchiv mit Karte](docs/screenshots/einsatzarchiv-mit-karte.jpg)](docs/screenshots/einsatzarchiv-mit-karte.jpg)
+
+### Modernes Einsatzarchiv
+
+Responsive Einsatzkarten mit Bildern, Einsatzarten, Kurzberichten und Seitennavigation.
+
+[![Modernes Einsatzarchiv](docs/screenshots/einsatzarchiv.jpg)](docs/screenshots/einsatzarchiv.jpg)
+
+### Strukturierte Eingabemaske
+
+Einsatzzeiten, Kräfte, Fahrzeuge, Bilder, Karte und weiterführende Links werden übersichtlich verwaltet.
+
+[![Einsatzbericht bearbeiten](docs/screenshots/einsatzbericht-bearbeiten.jpg)](docs/screenshots/einsatzbericht-bearbeiten.jpg)
+
+### Sicherung, Import und Export
+
+Vollständige ZIP-Sicherungen inklusive Einsatzdaten und Bildern sowie zusätzlicher CSV-Export.
+
+[![Import und Export](docs/screenshots/import-export.jpg)](docs/screenshots/import-export.jpg)
+
 ## Hauptfunktionen
 
 ### Einsatzverwaltung im Backend
