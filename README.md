@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="images/branding/einsatzlyzer-footer-logo.png" alt="Einsatzlyzer – WordPress incident management plugin logo" width="520">
+</p>
+
 # Einsatzlyzer
 
 **Modern WordPress incident management for fire departments and emergency services.**  
