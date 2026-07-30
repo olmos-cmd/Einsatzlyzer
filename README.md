@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/branding/einsatzlyzer-footer-logo.png" alt="Einsatzlyzer – WordPress incident management plugin logo" width="520">
+  <img src="images/branding/einsatzlyzer-logo.png" alt="Einsatzlyzer – WordPress incident management plugin logo" width="720">
 </p>
 
 # Einsatzlyzer
@@ -7,9 +7,9 @@
 **Modern WordPress incident management for fire departments and emergency services.**  
 **Moderne Einsatzverwaltung für WordPress – entwickelt für Feuerwehren und Hilfsorganisationen.**
 
-[English](#english) · [Deutsch](#deutsch) · [Changelog](CHANGELOG.md) · [Release notes](RELEASE_NOTES_10.0.0.md) · [License](LICENSE)
+[English](#english) · [Deutsch](#deutsch) · [Changelog](CHANGELOG.md) · [Release notes](RELEASE_NOTES_10.1.1.md) · [License](LICENSE)
 
-**Version 10.0.0 · WordPress · PHP 8.x · GPL-2.0-or-later**
+**Version 10.1.1 · WordPress · PHP 8.x · GPL-2.0-or-later**
 
 ---
 
@@ -130,7 +130,7 @@ Shortcode:
 ## Installation
 
 1. In WordPress, open **Plugins → Add New → Upload Plugin**.
-2. Select `einsatzlyzer-10.0.0.zip`.
+2. Select `einsatzlyzer-10.1.1.zip`.
 3. Install and activate the plugin.
 4. Open **Einsatzlyzer → Settings** and enter the organization, archive page and, if required, the fire station location.
 5. Create a public WordPress page and insert `[ffl_einsatz_liste_komplett]`.
@@ -249,7 +249,7 @@ Die Vorschaubilder stehen im englischen Abschnitt weiter oben und zeigen jeweils
 ## Installation
 
 1. In WordPress **Plugins → Installieren → Plugin hochladen** öffnen.
-2. Die Datei `einsatzlyzer-10.0.0.zip` auswählen.
+2. Die Datei `einsatzlyzer-10.1.1.zip` auswählen.
 3. Plugin installieren und aktivieren.
 4. Unter **Einsatzlyzer → Einstellungen** die Organisation, die Einsatzübersichtsseite und bei Bedarf den Standort des Feuerwehrhauses eintragen.
 5. Eine öffentliche WordPress-Seite anlegen und dort `[ffl_einsatz_liste_komplett]` einfügen.
