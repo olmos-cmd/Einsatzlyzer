@@ -100,62 +100,125 @@ Shortcode:
 ### Main logo / Hauptlogo
 
 <p align="center">
-  <img src="images/branding/einsatzlyzer-logo.png" alt="Einsatzlyzer logo" width="760">
+  <img src="images/branding/einsatzlyzer-logo.png" alt="Einsatzlyzer logo" width="620">
 </p>
 
 ### Incident archive / Einsatzarchiv
 
-[![Incident archive in English](docs/screenshots/all-incidents-english.webp)](docs/screenshots/all-incidents-english.webp)
-
-[![Einsatzarchiv auf Deutsch](docs/screenshots/all-incidents-german.webp)](docs/screenshots/all-incidents-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/all-incidents-english.webp"><img src="docs/screenshots/all-incidents-english.webp" alt="Incident archive in English" width="430"></a></td>
+    <td align="center"><a href="docs/screenshots/all-incidents-german.webp"><img src="docs/screenshots/all-incidents-german.webp" alt="Einsatzarchiv auf Deutsch" width="430"></a></td>
+  </tr>
+</table>
 
 ### Incident archive – mobile / Einsatzarchiv – mobil
 
-[![Mobile incident archive in English](docs/screenshots/all-incidents-mobile-english.webp)](docs/screenshots/all-incidents-mobile-english.webp)
-
-[![Mobiles Einsatzarchiv auf Deutsch](docs/screenshots/all-incidents-mobile-german.webp)](docs/screenshots/all-incidents-mobile-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/all-incidents-mobile-english.webp"><img src="docs/screenshots/all-incidents-mobile-english.webp" alt="Mobile incident archive in English" width="260"></a></td>
+    <td align="center"><a href="docs/screenshots/all-incidents-mobile-german.webp"><img src="docs/screenshots/all-incidents-mobile-german.webp" alt="Mobiles Einsatzarchiv auf Deutsch" width="260"></a></td>
+  </tr>
+</table>
 
 ### Front page incident overview / Einsatzübersicht auf der Startseite
 
-[![Front page incident overview in English](docs/screenshots/all-incidents-frontpage-english.webp)](docs/screenshots/all-incidents-frontpage-english.webp)
-
-[![Einsatzübersicht auf der Startseite auf Deutsch](docs/screenshots/all-incidents-frontpage-german.webp)](docs/screenshots/all-incidents-frontpage-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/all-incidents-frontpage-english.webp"><img src="docs/screenshots/all-incidents-frontpage-english.webp" alt="Front page incident overview in English" width="430"></a></td>
+    <td align="center"><a href="docs/screenshots/all-incidents-frontpage-german.webp"><img src="docs/screenshots/all-incidents-frontpage-german.webp" alt="Einsatzübersicht auf der Startseite auf Deutsch" width="430"></a></td>
+  </tr>
+</table>
 
 ### Front page incident overview – mobile / Einsatzübersicht auf der Startseite – mobil
 
-[![Mobile front page incident overview in English](docs/screenshots/all-incidents-frontpage-mobile-english.webp)](docs/screenshots/all-incidents-frontpage-mobile-english.webp)
-
-[![Mobile Einsatzübersicht auf der Startseite auf Deutsch](docs/screenshots/all-incidents-frontpage-mobile-german.webp)](docs/screenshots/all-incidents-frontpage-mobile-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/all-incidents-frontpage-mobile-english.webp"><img src="docs/screenshots/all-incidents-frontpage-mobile-english.webp" alt="Mobile front page incident overview in English" width="260"></a></td>
+    <td align="center"><a href="docs/screenshots/all-incidents-frontpage-mobile-german.webp"><img src="docs/screenshots/all-incidents-frontpage-mobile-german.webp" alt="Mobile Einsatzübersicht auf der Startseite auf Deutsch" width="260"></a></td>
+  </tr>
+</table>
 
 ### Incident summary / Einsatzübersicht
 
-[![Incident summary in English](docs/screenshots/incident-summary-english.webp)](docs/screenshots/incident-summary-english.webp)
-
-[![Einsatzübersicht auf Deutsch](docs/screenshots/incident-summary-german.webp)](docs/screenshots/incident-summary-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/incident-summary-english.webp"><img src="docs/screenshots/incident-summary-english.webp" alt="Incident summary in English" width="430"></a></td>
+    <td align="center"><a href="docs/screenshots/incident-summary-german.webp"><img src="docs/screenshots/incident-summary-german.webp" alt="Einsatzübersicht auf Deutsch" width="430"></a></td>
+  </tr>
+</table>
 
 ### Incident summary – mobile / Einsatzübersicht – mobil
 
-[![Mobile incident summary in English](docs/screenshots/incident-summary-mobile-english.webp)](docs/screenshots/incident-summary-mobile-english.webp)
-
-[![Mobile Einsatzübersicht auf Deutsch](docs/screenshots/incident-summary-mobile-german.webp)](docs/screenshots/incident-summary-mobile-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/incident-summary-mobile-english.webp"><img src="docs/screenshots/incident-summary-mobile-english.webp" alt="Mobile incident summary in English" width="260"></a></td>
+    <td align="center"><a href="docs/screenshots/incident-summary-mobile-german.webp"><img src="docs/screenshots/incident-summary-mobile-german.webp" alt="Mobile Einsatzübersicht auf Deutsch" width="260"></a></td>
+  </tr>
+</table>
 
 ### Settings / Einstellungen
 
-[![Settings in English](docs/screenshots/settings-english.webp)](docs/screenshots/settings-english.webp)
-
-[![Einstellungen auf Deutsch](docs/screenshots/settings-german.webp)](docs/screenshots/settings-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/settings-english.webp"><img src="docs/screenshots/settings-english.webp" alt="Settings in English" width="430"></a></td>
+    <td align="center"><a href="docs/screenshots/settings-german.webp"><img src="docs/screenshots/settings-german.webp" alt="Einstellungen auf Deutsch" width="430"></a></td>
+  </tr>
+</table>
 
 ### Settings – mobile / Einstellungen – mobil
 
-[![Mobile settings in English](docs/screenshots/settings-mobile-english.webp)](docs/screenshots/settings-mobile-english.webp)
-
-[![Mobile Einstellungen auf Deutsch](docs/screenshots/settings-mobile-german.webp)](docs/screenshots/settings-mobile-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/settings-mobile-english.webp"><img src="docs/screenshots/settings-mobile-english.webp" alt="Mobile settings in English" width="260"></a></td>
+    <td align="center"><a href="docs/screenshots/settings-mobile-german.webp"><img src="docs/screenshots/settings-mobile-german.webp" alt="Mobile Einstellungen auf Deutsch" width="260"></a></td>
+  </tr>
+</table>
 
 ### Import and export / Import und Export
 
-[![Import and export in English](docs/screenshots/import-export-english.webp)](docs/screenshots/import-export-english.webp)
-
-[![Import und Export auf Deutsch](docs/screenshots/import-export-german.webp)](docs/screenshots/import-export-german.webp)
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>English</strong></td>
+    <td width="50%" align="center"><strong>Deutsch</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/import-export-english.webp"><img src="docs/screenshots/import-export-english.webp" alt="Import and export in English" width="430"></a></td>
+    <td align="center"><a href="docs/screenshots/import-export-german.webp"><img src="docs/screenshots/import-export-german.webp" alt="Import und Export auf Deutsch" width="430"></a></td>
+  </tr>
+</table>
 
 ## Installation
 
@@ -274,7 +337,7 @@ Verwendeter Shortcode:
 
 ## Vorschaubilder
 
-Die Vorschaubilder stehen im englischen Abschnitt weiter oben und zeigen jeweils die deutsche und englische Plugin-Darstellung.
+Die Vorschaubilder stehen im englischen Abschnitt weiter oben und zeigen jeweils die deutsche und englische Plugin-Darstellung nebeneinander.
 
 ## Installation
 
