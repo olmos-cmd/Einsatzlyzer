@@ -1,0 +1,1399 @@
+#ffl_einsatz_details_meta_box .inside {
+    margin: 0;
+    padding: 0;
+    background: #f2f4f7;
+}
+
+.ffl-admin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 18px;
+}
+
+.ffl-admin-panel {
+    padding: 20px;
+    border: 1px solid #dfe3e8;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(28, 39, 52, .04);
+}
+
+.ffl-admin-panel--wide {
+    grid-column: 1 / -1;
+}
+
+.ffl-admin-panel__heading {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
+.ffl-admin-panel__heading > .dashicons {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    color: #b42323;
+    background: #fff0f0;
+}
+
+.ffl-admin-panel__heading h3 {
+    margin: 0 0 3px;
+    font-size: 15px;
+}
+
+.ffl-admin-panel__heading p {
+    margin: 0;
+    color: #687384;
+}
+
+.ffl-admin-fields {
+    display: grid;
+    gap: 14px;
+}
+
+.ffl-admin-fields--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ffl-admin-panel label {
+    display: grid;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.ffl-admin-panel label > span {
+    color: #344054;
+    font-weight: 650;
+}
+
+.ffl-admin-panel input,
+.ffl-admin-panel textarea,
+.ffl-admin-panel select {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-color: #cfd5dd;
+    border-radius: 7px;
+}
+
+.ffl-admin-panel input,
+.ffl-admin-panel select {
+    min-height: 40px;
+}
+
+.ffl-admin-field-full {
+    margin-top: 14px;
+}
+
+.ffl-gallery-admin-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 52px;
+    margin-bottom: 14px;
+}
+
+.gallery-thumb-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 110px;
+    height: 90px;
+    border: 1px solid #d8dde4;
+    border-radius: 8px;
+    background: #eef1f4;
+    cursor: move;
+}
+
+.gallery-thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-thumb-wrapper .remove-gallery-image {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(157, 18, 18, .9);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.gallery-thumb-wrapper > .dashicons {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #fff;
+    text-shadow: 0 1px 4px #000;
+}
+
+.ffl-admin-map-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+#ffl-geocode-status {
+    color: #576273;
+    font-style: italic;
+}
+
+#ffl-admin-map-popup-wrapper {
+    display: none;
+}
+
+#ffl-admin-map-popup-wrapper.is-open {
+    display: block;
+}
+
+#ffl-admin-map-overlay {
+    position: fixed;
+    z-index: 99998;
+    inset: 0;
+    background: rgba(10, 17, 26, .72);
+    backdrop-filter: blur(4px);
+}
+
+#ffl-admin-map-dialog {
+    position: fixed;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: min(1100px, calc(100% - 40px));
+    height: min(760px, calc(100vh - 50px));
+    overflow: hidden;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, .28);
+    transform: translate(-50%, -50%);
+}
+
+.ffl-admin-map-dialog__bar,
+.ffl-admin-map-dialog__footer {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+}
+
+.ffl-admin-map-dialog__bar {
+    border-bottom: 1px solid #e0e4e9;
+}
+
+.ffl-admin-map-dialog__footer {
+    border-top: 1px solid #e0e4e9;
+    color: #647083;
+}
+
+.ffl-admin-map-close:not(.button) {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: #414b59;
+    background: #eef1f4;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+#ffl-admin-map {
+    min-height: 0;
+}
+
+@media (max-width: 850px) {
+    .ffl-admin-grid,
+    .ffl-admin-fields--two {
+        grid-template-columns: 1fr;
+    }
+
+    .ffl-admin-panel--wide {
+        grid-column: auto;
+    }
+}
+
+/* ------------------------------------------------------------
+ * Kompakte Einsatzliste
+ * ------------------------------------------------------------ */
+body.post-type-ffl_einsatz.edit-php .wrap {
+    max-width: none;
+}
+
+.ffl-admin-overview {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(140px, 1fr));
+    gap: 10px;
+    margin: 12px 20px 16px 0;
+}
+
+.ffl-admin-overview__card {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 9px;
+    align-items: center;
+    min-height: 66px;
+    padding: 11px 13px;
+    border: 1px solid #dcdcde;
+    border-radius: 10px;
+    color: #1d2327;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(16, 24, 40, .04);
+    text-decoration: none;
+}
+
+.ffl-admin-overview__card:hover,
+.ffl-admin-overview__card:focus {
+    border-color: #b42323;
+    color: #b42323;
+    box-shadow: 0 5px 18px rgba(180, 35, 35, .11);
+}
+
+.ffl-admin-overview__card > .dashicons {
+    grid-row: 1 / 3;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    color: #b42323;
+    background: #fff0f0;
+}
+
+.ffl-admin-overview__card strong {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.ffl-admin-overview__card small {
+    overflow: hidden;
+    color: #646970;
+    font-size: 11px;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.post-type-ffl_einsatz.edit-php .wp-list-table {
+    table-layout: fixed;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+body.post-type-ffl_einsatz.edit-php .wp-list-table tbody tr {
+    height: 84px;
+}
+
+body.post-type-ffl_einsatz.edit-php .wp-list-table tbody tr:hover {
+    background: #fbfcfd;
+}
+
+body.post-type-ffl_einsatz.edit-php .wp-list-table th,
+body.post-type-ffl_einsatz.edit-php .wp-list-table td {
+    vertical-align: middle;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-ffl_thumb {
+    width: 82px;
+    text-align: center;
+}
+
+.ffl-admin-list-thumb {
+    display: inline-grid;
+    width: 72px;
+    height: 52px;
+    overflow: hidden;
+    border: 1px solid #dcdcde;
+    border-radius: 7px;
+    object-fit: cover;
+    background: #f0f2f4;
+    box-shadow: 0 2px 7px rgba(16, 24, 40, .08);
+}
+
+.ffl-admin-list-thumb--empty {
+    place-items: center;
+    color: #8c8f94;
+    box-shadow: none;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-title {
+    width: 25%;
+    min-width: 250px;
+}
+
+body.post-type-ffl_einsatz.edit-php td.column-title > p:not(.row-actions),
+body.post-type-ffl_einsatz.edit-php td.column-title .post-excerpt,
+body.post-type-ffl_einsatz.edit-php td.column-title .post_excerpt,
+body.post-type-ffl_einsatz.edit-php td.column-title .excerpt {
+    display: none !important;
+}
+
+body.post-type-ffl_einsatz.edit-php td.column-title strong {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 42px;
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+body.post-type-ffl_einsatz.edit-php td.column-title .row-actions {
+    margin-top: 5px;
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+body.post-type-ffl_einsatz.edit-php td.column-title .row-actions span {
+    white-space: nowrap;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-ffl_number {
+    width: 54px;
+    text-align: center;
+}
+
+.ffl-admin-number {
+    display: inline-grid;
+    place-items: center;
+    min-width: 30px;
+    height: 30px;
+    padding: 0 5px;
+    border-radius: 8px;
+    color: #b42323;
+    background: #fff0f0;
+    font-size: 13px;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-ffl_alarm {
+    width: 112px;
+}
+
+.ffl-admin-date,
+.ffl-admin-time,
+.ffl-admin-published {
+    display: block;
+}
+
+.ffl-admin-date {
+    color: #1d2327;
+    font-weight: 600;
+}
+
+.ffl-admin-time,
+.ffl-admin-published {
+    margin-top: 2px;
+    color: #646970;
+    font-size: 11px;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-taxonomy-ffl_einsatzart {
+    width: 145px;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-taxonomy-ffl_einsatzart a {
+    display: inline-block;
+    max-width: 100%;
+    padding: 4px 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    color: #0a4f8a;
+    background: #eaf4ff;
+    font-size: 11px;
+    font-weight: 650;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-ffl_location {
+    width: 17%;
+}
+
+.ffl-admin-location {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 38px;
+    line-height: 1.45;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-ffl_gallery {
+    width: 96px;
+    text-align: center;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-ffl_map {
+    width: 82px;
+    text-align: center;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-ffl_status {
+    width: 108px;
+}
+
+.ffl-admin-icon-status {
+    display: inline-flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    min-height: 28px;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+
+.ffl-admin-icon-status.is-ok {
+    color: #137333;
+    background: #e9f7ee;
+}
+
+.ffl-admin-icon-status.is-warning {
+    color: #b54708;
+    background: #fff4e5;
+}
+
+.ffl-admin-icon-status.is-muted {
+    color: #646970;
+    background: #f0f0f1;
+}
+
+.ffl-admin-mini-state {
+    display: block;
+    margin-top: 3px;
+    font-size: 9px;
+    line-height: 1.2;
+}
+
+.ffl-admin-mini-state.is-ok {
+    color: #137333;
+}
+
+.ffl-admin-mini-state.is-warning {
+    color: #b54708;
+}
+
+.ffl-admin-status {
+    display: inline-block;
+    padding: 4px 7px;
+    border-radius: 999px;
+    color: #50575e;
+    background: #f0f0f1;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.ffl-admin-status--publish {
+    color: #0d5f2c;
+    background: #e6f6eb;
+}
+
+.ffl-admin-status--draft,
+.ffl-admin-status--pending {
+    color: #8a4300;
+    background: #fff0d5;
+}
+
+.ffl-admin-status--future {
+    color: #0a4f8a;
+    background: #eaf4ff;
+}
+
+.ffl-admin-incomplete {
+    display: inline-flex;
+    gap: 2px;
+    align-items: center;
+    margin-top: 4px;
+    color: #b42323;
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.ffl-admin-incomplete .dashicons {
+    width: 13px;
+    height: 13px;
+    font-size: 13px;
+}
+
+.ffl-admin-missing {
+    color: #b42323;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+body.post-type-ffl_einsatz.edit-php .tablenav.top {
+    min-height: 42px;
+    height: auto;
+}
+
+body.post-type-ffl_einsatz.edit-php .tablenav.top .alignleft.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+body.post-type-ffl_einsatz.edit-php select.ffl-admin-filter {
+    max-width: 190px;
+}
+
+@media (max-width: 1500px) {
+    .ffl-admin-overview {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+    }
+
+    body.post-type-ffl_einsatz.edit-php .column-taxonomy-ffl_einsatzart,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_location {
+        width: 135px;
+    }
+}
+
+@media (max-width: 1120px) {
+    body.post-type-ffl_einsatz.edit-php .column-ffl_gallery,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_map {
+        display: none;
+    }
+}
+
+@media (max-width: 782px) {
+    .ffl-admin-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-right: 10px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .column-ffl_thumb,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_number,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_alarm,
+    body.post-type-ffl_einsatz.edit-php .column-taxonomy-ffl_einsatzart,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_location,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_gallery,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_map,
+    body.post-type-ffl_einsatz.edit-php .column-ffl_status {
+        display: none;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .column-title {
+        width: auto;
+        min-width: 0;
+    }
+}
+
+
+/* Einsatzlyzer Branding und Listenoptimierung – 9.7.4 */
+body.post-type-ffl_einsatz.edit-php .wrap > h1.wp-heading-inline {
+    vertical-align: middle;
+}
+
+.ffl-admin-title-logo {
+    display: inline-flex;
+    align-items: center;
+    width: clamp(260px, 28vw, 470px);
+    height: 96px;
+    margin: 0 0 10px 24px;
+    vertical-align: middle;
+}
+
+.ffl-admin-title-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+    border-radius: 12px;
+}
+
+body.post-type-ffl_einsatz.edit-php .column-title {
+    width: 31%;
+    min-width: 390px;
+}
+
+body.post-type-ffl_einsatz.edit-php td.column-title .row-actions {
+    display: grid !important;
+    grid-template-columns: repeat(4, max-content);
+    gap: 3px 10px;
+    max-width: 620px;
+    margin-top: 6px;
+    overflow: visible;
+    font-size: 0;
+    line-height: 1.35;
+}
+
+body.post-type-ffl_einsatz.edit-php td.column-title .row-actions span {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+body.post-type-ffl_einsatz.edit-php td.column-title .row-actions span:not(:last-child)::after {
+    margin-left: 10px;
+    color: #b8bdc5;
+    content: "|";
+}
+
+.ffl-admin-list-thumb--empty {
+    grid-template-rows: 1fr auto;
+    place-items: center;
+    padding: 5px 4px 4px;
+    border-color: #2b3948;
+    color: #e8edf3;
+    background: linear-gradient(145deg, #172534, #07111d);
+    box-shadow: 0 2px 8px rgba(7, 17, 29, .22);
+}
+
+.ffl-admin-list-thumb--empty img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.ffl-admin-list-thumb--empty small {
+    color: #d8e0e8;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+    .ffl-admin-title-logo {
+        width: 300px;
+        height: 78px;
+        margin-left: 14px;
+    }
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions {
+        grid-template-columns: repeat(3, max-content);
+        max-width: 470px;
+    }
+}
+
+@media (max-width: 782px) {
+    .ffl-admin-title-logo {
+        display: flex;
+        width: min(100%, 380px);
+        height: 78px;
+        margin: 10px 10px 12px 0;
+    }
+}
+
+
+/* Einsatzlyzer 9.7.5 – kompakte Backend-Logos */
+.ffl-admin-page-brand {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin: 14px 0 22px;
+}
+
+.ffl-admin-page-brand--compact > img {
+    display: block;
+    width: 210px !important;
+    height: 82px !important;
+    max-width: 210px !important;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.ffl-admin-page-brand--compact h1 {
+    margin: 0 0 4px;
+}
+
+.ffl-admin-page-brand--compact p {
+    margin: 0;
+    color: #646970;
+}
+
+body.post-type-ffl_einsatz.edit-php .ffl-admin-title-logo {
+    display: none;
+}
+
+body.post-type-ffl_einsatz.edit-php .ffl-admin-heading-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0 12px;
+    padding-right: 18px;
+}
+
+body.post-type-ffl_einsatz.edit-php .ffl-admin-heading-bar > h1.wp-heading-inline {
+    margin: 0;
+    padding: 0;
+}
+
+body.post-type-ffl_einsatz.edit-php .ffl-admin-title-logo.is-positioned {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 190px;
+    height: 64px;
+    margin: 0;
+}
+
+body.post-type-ffl_einsatz.edit-php .ffl-admin-title-logo.is-positioned img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right center;
+    border-radius: 0;
+}
+
+/* Kleines, weißes Symbol im WordPress-Menü ohne farbige Fläche. */
+#adminmenu .menu-icon-ffl_einsatz .wp-menu-image img {
+    width: 20px !important;
+    height: 20px !important;
+    padding: 7px 0 0 !important;
+    opacity: .92;
+    object-fit: contain;
+}
+
+#adminmenu .menu-icon-ffl_einsatz:hover .wp-menu-image img,
+#adminmenu .menu-icon-ffl_einsatz.wp-has-current-submenu .wp-menu-image img {
+    opacity: 1;
+}
+
+@media (max-width: 782px) {
+    .ffl-admin-page-brand--compact {
+        align-items: flex-start;
+    }
+
+    .ffl-admin-page-brand--compact > img {
+        width: 150px !important;
+        height: 60px !important;
+        max-width: 150px !important;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .ffl-admin-heading-bar {
+        align-items: flex-start;
+        padding-right: 10px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .ffl-admin-title-logo.is-positioned {
+        width: 150px;
+        height: 52px;
+    }
+}
+
+
+/* Einsatzlyzer 9.7.6 – endgültige Größenkorrektur */
+.ffl-admin-page-brand--compact > img {
+    width: 88px !important;
+    height: 52px !important;
+    max-width: 88px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#adminmenu .menu-icon-ffl_einsatz .wp-menu-image,
+#adminmenu .menu-icon-ffl_einsatz .wp-menu-image img {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#adminmenu .menu-icon-ffl_einsatz .wp-menu-image img {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    padding: 7px 0 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    object-fit: contain !important;
+}
+
+/* Standardbild-Auswahl in den Einsatzlyzer-Einstellungen */
+.ffl-default-image-picker {
+    max-width: 520px;
+}
+.ffl-default-image-preview {
+    width: min(100%, 480px);
+    min-height: 150px;
+    padding: 10px;
+    border: 1px solid #c3c4c7;
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.ffl-default-image-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 240px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+.ffl-default-image-preview.is-empty {
+    color: #646970;
+    background: #f6f7f7;
+    border-style: dashed;
+}
+
+/* ============================================================
+ * Einsatzlyzer 10.1.1 – saubere Mobile-Ansicht im Backend
+ * ============================================================ */
+@media (max-width: 782px) {
+    body.post-type-ffl_einsatz.edit-php,
+    body.post-type-ffl_einsatz.edit-php #wpwrap,
+    body.post-type-ffl_einsatz.edit-php #wpcontent,
+    body.post-type-ffl_einsatz.edit-php #wpbody,
+    body.post-type-ffl_einsatz.edit-php #wpbody-content {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php #wpcontent {
+        padding-left: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php #wpbody-content {
+        overflow-x: clip;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wrap {
+        width: auto;
+        max-width: 100%;
+        min-width: 0;
+        margin: 12px 12px 0;
+        box-sizing: border-box;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .ffl-admin-heading-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+        margin: 0 0 12px;
+        padding: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .ffl-admin-heading-bar > h1.wp-heading-inline {
+        margin: 0;
+        padding: 0;
+        font-size: clamp(24px, 7vw, 30px);
+        line-height: 1.15;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .ffl-admin-title-logo.is-positioned {
+        width: min(100%, 240px);
+        height: auto;
+        min-height: 0;
+        margin: 2px 0 0;
+        justify-content: flex-start;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .ffl-admin-title-logo.is-positioned img {
+        width: 100%;
+        height: auto;
+        max-height: 78px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .page-title-action {
+        display: inline-flex;
+        min-height: 42px;
+        margin: 0 0 14px;
+        padding: 0 14px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .ffl-admin-overview {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 10px 0 20px;
+    }
+
+    .ffl-admin-overview__card {
+        position: relative;
+        display: flex;
+        min-width: 0;
+        min-height: 106px;
+        padding: 14px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 5px;
+        border-radius: 14px;
+        box-sizing: border-box;
+    }
+
+    .ffl-admin-overview__card > .dashicons {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        font-size: 21px;
+    }
+
+    .ffl-admin-overview__card strong {
+        display: block;
+        max-width: calc(100% - 2px);
+        margin-top: 30px;
+        font-size: clamp(24px, 7vw, 31px);
+        line-height: 1;
+        overflow-wrap: anywhere;
+    }
+
+    .ffl-admin-overview__card small {
+        display: block;
+        width: 100%;
+        overflow: visible;
+        color: #50575e;
+        font-size: 12px;
+        line-height: 1.28;
+        text-overflow: clip;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .subsubsub {
+        display: flex;
+        width: 100%;
+        margin: 4px 0 14px;
+        padding: 0;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        float: none;
+        line-height: 1.7;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .subsubsub li {
+        margin: 0;
+        white-space: normal;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .search-box {
+        position: static;
+        display: grid;
+        float: none;
+        width: 100%;
+        margin: 0 0 12px;
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .search-box input[type="search"],
+    body.post-type-ffl_einsatz.edit-php .search-box .button {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.top {
+        display: block;
+        margin-bottom: 14px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.top .tablenav-pages {
+        display: none;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.top .alignleft.actions {
+        display: grid;
+        float: none;
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.top select,
+    body.post-type-ffl_einsatz.edit-php select.ffl-admin-filter,
+    body.post-type-ffl_einsatz.edit-php .tablenav.top .button {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        min-height: 42px;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.top .button.action {
+        font-weight: 600;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        overflow: visible;
+        table-layout: auto;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table thead,
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tfoot {
+        display: none;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody {
+        display: grid;
+        width: 100%;
+        gap: 12px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody tr {
+        position: relative;
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 16px 14px 14px 48px;
+        border: 1px solid #dcdcde;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(16, 24, 40, .07);
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody tr:hover {
+        background: #fff;
+        box-shadow: 0 6px 20px rgba(16, 24, 40, .10);
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody th.check-column {
+        position: absolute;
+        top: 16px;
+        left: 14px;
+        display: block !important;
+        width: 24px;
+        padding: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody th.check-column input {
+        width: 22px;
+        height: 22px;
+        margin: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody td {
+        display: none !important;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody td.column-title {
+        display: block !important;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title::before,
+    body.post-type-ffl_einsatz.edit-php td.column-title .toggle-row {
+        display: none !important;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title strong {
+        display: block;
+        max-width: 100%;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1.4;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title strong a {
+        display: block;
+        color: #1d2327;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions {
+        position: static;
+        display: flex !important;
+        width: 100%;
+        max-width: 100%;
+        margin: 12px 0 0;
+        padding: 0;
+        flex-wrap: wrap;
+        gap: 7px;
+        opacity: 1;
+        visibility: visible;
+        box-sizing: border-box;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions span {
+        display: inline-flex;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions span:empty,
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions a:empty {
+        display: none !important;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions span:not(:last-child)::after {
+        display: none;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions a {
+        display: inline-flex;
+        width: auto;
+        min-width: 0;
+        min-height: 36px;
+        padding: 6px 11px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #c3c4c7;
+        border-radius: 9px;
+        color: #135e96;
+        background: #f6f7f7;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        box-sizing: border-box;
+        white-space: normal;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions .edit a,
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions .view a {
+        border-color: #9ec5e5;
+        background: #f3f8fc;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions .trash a {
+        border-color: #efb4b4;
+        color: #b32d2e;
+        background: #fff5f5;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.bottom {
+        display: block;
+        height: auto;
+        margin: 16px 0 28px;
+        padding: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.bottom .alignleft.actions {
+        display: none;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav-pages {
+        display: flex;
+        float: none;
+        width: 100%;
+        min-width: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav-pages .displaying-num {
+        margin: 0;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav-pages .pagination-links {
+        display: flex;
+        max-width: 100%;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav-pages .paging-input {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav-pages .current-page {
+        width: 52px;
+        min-height: 40px;
+        margin: 0;
+        text-align: center;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav-pages .button,
+    body.post-type-ffl_einsatz.edit-php .tablenav-pages .tablenav-pages-navspan {
+        display: inline-flex;
+        min-width: 40px;
+        min-height: 40px;
+        margin: 0;
+        padding: 0 8px;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 420px) {
+    body.post-type-ffl_einsatz.edit-php .wrap {
+        margin-inline: 9px;
+    }
+
+    .ffl-admin-overview {
+        gap: 8px;
+    }
+
+    .ffl-admin-overview__card {
+        min-height: 100px;
+        padding: 12px 10px;
+    }
+
+    .ffl-admin-overview__card > .dashicons {
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .ffl-admin-overview__card strong {
+        font-size: 25px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .tablenav.top .alignleft.actions {
+        grid-template-columns: 1fr;
+    }
+
+    body.post-type-ffl_einsatz.edit-php .wp-list-table tbody tr {
+        padding: 15px 12px 13px 44px;
+    }
+
+    body.post-type-ffl_einsatz.edit-php td.column-title .row-actions a {
+        min-height: 34px;
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+}
+
+
+/* Helles Branding und dezente Admin-Hintergründe */
+.ffl-settings-wrap,
+body.post-type-ffl_einsatz.edit-php .wrap {
+    position: relative;
+    isolation: isolate;
+}
+.ffl-settings-wrap::before,
+body.post-type-ffl_einsatz.edit-php .wrap::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 62px;
+    right: 28px;
+    width: clamp(180px, 23vw, 340px);
+    aspect-ratio: 1 / 1;
+    background: url('../images/branding/einsatzlyzer-logo.png') center / contain no-repeat;
+    opacity: .045;
+    pointer-events: none;
+}
+.ffl-admin-page-brand--compact > img {
+    width: 118px !important;
+    height: 68px !important;
+    max-width: 118px !important;
+    object-fit: contain !important;
+}
+body.post-type-ffl_einsatz.edit-php .ffl-admin-title-logo.is-positioned {
+    width: 170px;
+    height: 58px;
+}
+@media (max-width: 782px) {
+    .ffl-settings-wrap::before,
+    body.post-type-ffl_einsatz.edit-php .wrap::before {
+        top: 76px;
+        right: 8px;
+        width: 150px;
+        opacity: .035;
+    }
+    .ffl-admin-page-brand--compact > img {
+        width: 96px !important;
+        height: 58px !important;
+        max-width: 96px !important;
+    }
+}
+
+
+/* Qualitätsampel 10.4.9 */
+body.post-type-ffl_einsatz.edit-php .column-ffl_quality{width:150px;overflow:visible}
+.ffl-quality{position:relative;display:inline-block;min-width:128px}
+.ffl-quality>summary{display:grid;grid-template-columns:12px minmax(0,1fr);gap:2px 7px;align-items:center;padding:7px 9px;border:1px solid #dcdcde;border-radius:9px;background:#fff;cursor:pointer;list-style:none;box-shadow:0 1px 4px rgba(16,24,40,.06)}
+.ffl-quality>summary::-webkit-details-marker{display:none}
+.ffl-quality>summary strong{font-size:11px;line-height:1.2}
+.ffl-quality>summary small{grid-column:2;color:#646970;font-size:9px;line-height:1.2}
+.ffl-quality__dot{grid-row:1/3;width:10px;height:10px;border-radius:50%;background:#d63638;box-shadow:0 0 0 3px #fcf0f1}
+.ffl-quality--ready .ffl-quality__dot{background:#00a32a;box-shadow:0 0 0 3px #edfaef}
+.ffl-quality--almost .ffl-quality__dot{background:#dba617;box-shadow:0 0 0 3px #fff8e5}
+.ffl-quality__panel{position:absolute;z-index:50;right:0;top:calc(100% + 6px);width:245px;padding:14px;border:1px solid #c3c4c7;border-radius:10px;background:#fff;box-shadow:0 12px 30px rgba(16,24,40,.18);text-align:left}
+.ffl-quality__panel>strong{display:block;margin-bottom:8px}
+.ffl-quality__panel ul{margin:0 0 10px}
+.ffl-quality__panel li{display:flex;gap:7px;align-items:center;margin:5px 0;font-size:11px}
+.ffl-quality__panel li .dashicons{width:16px;height:16px;font-size:16px}
+.ffl-quality__panel li.is-ok{color:#137333}
+.ffl-quality__panel li.is-missing{color:#b42323}
+.ffl-admin-overview__card.is-ready{border-left:4px solid #00a32a}
+.ffl-admin-overview__card.is-almost{border-left:4px solid #dba617}
+.ffl-admin-overview__card.is-incomplete{border-left:4px solid #d63638}
+@media(max-width:1100px){body.post-type-ffl_einsatz.edit-php .column-ffl_gallery,body.post-type-ffl_einsatz.edit-php .column-ffl_map{display:none}.ffl-quality__panel{right:auto;left:0}}
+@media(max-width:782px){body.post-type-ffl_einsatz.edit-php .column-ffl_quality{width:auto}.ffl-quality{min-width:0;width:100%}.ffl-quality>summary{grid-template-columns:12px minmax(0,1fr)}.ffl-quality__panel{position:fixed;left:12px;right:12px;top:20%;width:auto;max-height:60vh;overflow:auto}.ffl-admin-overview{grid-template-columns:repeat(2,minmax(0,1fr));margin-right:10px}.ffl-admin-overview__card small{white-space:normal}}
+
+/* Vehicle picker in incident editor */
+.ffl-vehicle-picker__list{max-height:340px;overflow:auto;border:1px solid #dcdcde;border-radius:8px;background:#fff;margin:10px 0;padding:6px}.ffl-vehicle-picker__item{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-bottom:1px solid #f0f0f1;cursor:pointer}.ffl-vehicle-picker__item:last-child{border-bottom:0}.ffl-vehicle-picker__item:hover{background:#f6f7f7}.ffl-vehicle-picker__item input{margin-top:3px}.ffl-vehicle-picker__item span{display:flex;flex-direction:column}.ffl-vehicle-picker__item small{margin-top:2px;color:#646970}.ffl-vehicle-picker__item[hidden]{display:none!important}@media(max-width:782px){.ffl-vehicle-picker__list{max-height:420px}.ffl-vehicle-picker__item{padding:12px 8px}.ffl-vehicle-picker__item input{width:22px;height:22px}}
+
+/* 10.6.7: übersichtliche Fahrzeugauswahl */
+.ffl-vehicle-picker__top{display:grid;gap:10px}.ffl-vehicle-picker__filters{display:flex;flex-wrap:wrap;gap:6px}.ffl-vehicle-picker__filters .button.is-active{background:#2271b1;border-color:#2271b1;color:#fff}.ffl-vehicle-picker__selected{margin:12px 0;padding:12px;border:1px solid #c3c4c7;border-radius:10px;background:#f6f7f7}.ffl-vehicle-picker__selected.is-empty{display:none}.ffl-vehicle-picker__selected-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.ffl-vehicle-picker__chips{display:flex;flex-wrap:wrap;gap:7px}.ffl-vehicle-picker__chip{border:1px solid #8c8f94;border-radius:999px;background:#fff;padding:5px 10px;cursor:pointer}.ffl-vehicle-picker__chip:hover{border-color:#d63638;color:#b32d2e}.ffl-vehicle-picker__list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:420px;padding:8px}.ffl-vehicle-picker__item{border:1px solid #dcdcde!important;border-radius:9px;padding:11px!important;align-items:center;background:#fff}.ffl-vehicle-picker__item.is-selected{border-color:#2271b1!important;box-shadow:0 0 0 1px #2271b1;background:#f0f6fc}.ffl-vehicle-picker__content{min-width:0;flex:1}.ffl-vehicle-picker__headline{display:flex!important;flex-direction:row!important;justify-content:space-between;gap:8px;align-items:center}.ffl-vehicle-picker__headline code{font-size:12px;white-space:nowrap}.ffl-vehicle-picker__badge{display:inline-flex!important;align-self:flex-start;margin-top:6px;padding:2px 7px;border-radius:999px;font-size:11px;font-style:normal;font-weight:600}.ffl-vehicle-picker__badge--own{background:#dff4e5;color:#116329}.ffl-vehicle-picker__badge--external{background:#eef1f4;color:#50575e}.ffl-vehicle-picker__empty{padding:16px;text-align:center;background:#fff8e5;border-left:4px solid #dba617}
+@media(max-width:782px){.ffl-vehicle-picker__filters{display:grid;grid-template-columns:1fr 1fr}.ffl-vehicle-picker__filters .button{min-height:42px;white-space:normal}.ffl-vehicle-picker__list{grid-template-columns:1fr;max-height:520px;border:0;padding:0;background:transparent}.ffl-vehicle-picker__item{min-height:72px;padding:12px!important}.ffl-vehicle-picker__item input{flex:0 0 24px}.ffl-vehicle-picker__selected-head{align-items:flex-start;flex-direction:column}.ffl-vehicle-picker__chip{width:100%;text-align:left;min-height:40px}.ffl-vehicle-picker__headline{align-items:flex-start}.ffl-vehicle-picker__headline code{font-size:11px}.ffl-vehicle-picker__item small{font-size:12px;line-height:1.35}}
