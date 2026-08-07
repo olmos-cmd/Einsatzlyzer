@@ -145,7 +145,6 @@ Einsatzlyzer ist eine umfassende WordPress-Einsatzverwaltung für Feuerwehren un
   </tr>
 </table>
 
-
 ---
 
 <a id="english"></a>
@@ -205,6 +204,8 @@ The PHP extension `ZipArchive` is required for ZIP import and export.
 Einsatzlyzer uses OpenStreetMap and Leaflet. No Google Maps or HERE API key and no billing account are required. The visitor's location is never requested or stored.
 
 Each incident can use an exact location, an approximate location or no public location. Optional route planning opens externally through OpenStreetMap.
+
+Einsatzlyzer supports OpenStreetMap via Leaflet and optionally OpenTopoMap for topographic maps. Required map attribution is displayed automatically on the map. Details about map data, third-party components and licenses are documented in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 ## Import and export
 
@@ -288,6 +289,8 @@ Einsatzlyzer verwendet OpenStreetMap und Leaflet. Ein Google-Maps- oder HERE-API
 
 Für jeden Einsatz kann eine genaue, angenäherte oder keine öffentliche Position gewählt werden. Die optionale Routenplanung wird extern über OpenStreetMap geöffnet.
 
+Einsatzlyzer unterstützt OpenStreetMap über Leaflet und optional OpenTopoMap für topografische Karten. Die erforderlichen Quellenangaben werden automatisch direkt auf der Karte angezeigt. Einzelheiten zu Kartendaten, Drittanbieterbestandteilen und Lizenzen stehen in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+
 ## Import und Export
 
 Das Plugin erstellt eine vollständige ZIP-Sicherung mit Einsatzberichten, Medien, Metadaten, Fahrzeugen und Zuordnungen, Wetterdaten, Routingwerten und Plugin-Einstellungen. Ein Import wird geprüft, bevor Daten geschrieben werden. Vorhandene Datensätze können übersprungen, aktualisiert oder als Kopie importiert werden.
@@ -316,8 +319,6 @@ Einsatzlyzer checks incident content, preview images, schema and indexing separa
 
 Einsatzlyzer prüft Inhalt, Vorschaubilder, Schema und Indexierung getrennt. Die Diagnoseseite unterstützt Yoast SEO, Rank Math, All in One SEO und SEOPress, enthält eine zwischengespeicherte Live-Schema-Prüfung und unterscheidet klar zwischen WordPress-Caches und serverseitigen nginx-, Hoster- oder CDN-Caches.
 
-
-
 ## Complete weather backup / Vollständige Wettersicherung (10.5.2)
 
 The full ZIP backup explicitly includes the configured default fire-station location, all incident coordinates, stored historical weather data, the actual coordinate source (`incident` or `station`), request metadata and weather errors. Import restores these values unchanged and verifies the default-location settings after completion.
@@ -334,9 +335,6 @@ Die vollständige ZIP-Sicherung enthält ausdrücklich den konfigurierten Feuerw
 - **Druckansicht:** Der Button „Einsatz drucken“ erzeugt eine sachliche Ansicht ohne Navigation, Karte und Teilen-Funktionen.
 
 Historical weather uses reconstructed grid data from Open-Meteo and must not be described as a direct measurement at the incident scene.
-
-
-
 
 ## 10.4.4 mobile weather cards / Mobile Wetterkarten
 
@@ -369,11 +367,8 @@ Historical weather uses reconstructed grid data from Open-Meteo and must not be 
 - Alle gespeicherten Wetterwerte aktualisieren oder nur fehlgeschlagene Abrufe erneut versuchen.
 - Verarbeitung pausieren, fortsetzen oder beenden und Fehler im Protokoll prüfen.
 
-
 ### Complete backup and restore / Vollständige Sicherung und Wiederherstellung
 Full ZIP backups include every Einsatzlyzer field, weather data, timelines, related incident links, comments, images, attachment metadata and all persistent plugin settings. / Vollständige ZIP-Sicherungen enthalten sämtliche Einsatzfelder, Wetterdaten, Zeitachsen, Verknüpfungen, Kommentare, Bilder, Anhang-Metadaten und alle dauerhaften Plugin-Einstellungen.
-
-
 
 ## 10.4.8 plugin list branding / Branding in der Plugin-Liste
 
@@ -395,7 +390,6 @@ Historisches Wetter ist jetzt ein eigenes Modul mit Übersicht, Stapelverarbeitu
 - Neue Importe übernehmen den früher automatisch ergänzten Hinweis nicht mehr.
 - Eine eigene Werkzeugseite entfernt ausschließlich diesen exakten Satz aus bestehenden Berichten, Kurzfassungen und Textauszügen.
 
-
 ## 10.4.9 quality dashboard / Qualitätsübersicht
 
 The incident list now uses one compact quality indicator instead of several narrow status columns. / Die Einsatzliste verwendet jetzt eine kompakte Qualitätsampel anstelle mehrerer schmaler Statusspalten.
@@ -406,13 +400,11 @@ Annual reports are now generated as protected server-side files before download.
 
 Jahresberichte werden jetzt zunächst als geschützte Datei auf dem Server erzeugt. PDF, CSV und XLSX zeigen einen klaren Erfolgs- oder Fehlerhinweis, statt lautlos zu scheitern. Als Rückfallebene steht eine Browser-Druckansicht zur Verfügung; erzeugte Dateien verfallen nach einer Stunde.
 
-
 ## Diagnostic workflow / Diagnose-Arbeitsablauf (10.5.4)
 
 The diagnostics page now explains its pagination, supports configurable page sizes, search, quick filters and mobile-friendly quality details.
 
 Die Diagnoseseite erklärt nun die Seitennavigation und bietet einstellbare Seitengrößen, Suche, Schnellfilter sowie mobilfreundliche Qualitätsdetails.
-
 
 ## Fahrzeugauswahl und Fahrzeugimport
 
