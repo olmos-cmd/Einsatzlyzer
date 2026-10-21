@@ -1,0 +1,78 @@
+# Compatibility test matrix
+
+Run these checks on a staging WordPress installation before a release:
+
+1. No SEO plugin: Einsatzlyzer outputs one `NewsArticle` and one complete `BreadcrumbList`.
+2. Yoast SEO: one breadcrumb list, all three items contain URLs, no `Event` node.
+3. Rank Math: normalized `NewsArticle`, one complete breadcrumb list, no `Event` node.
+4. All in One SEO: normalized schema output, one complete breadcrumb list, no `Event` node.
+5. SEOPress: article and breadcrumb filters apply and event schema is removed.
+6. Incident with featured image at least 1200 × 675 pixels reports a valid image.
+7. Incident without a featured image uses the first gallery image or configured default image.
+8. German and English plugin interfaces contain no untranslated diagnostic labels.
+9. Published, draft, noindex and custom-canonical incidents show the correct indexing status.
+10. Updating from an earlier version keeps the cache notice visible until explicitly confirmed.
+
+The `schema-integration-test.php` file is a lightweight fixture check. Full integration tests require WordPress and the respective SEO plugins.
+
+## Version 10.4.1 checks
+
+- Disable each print option separately and verify the corresponding section is absent from browser print preview.
+- Verify website custom logo is shown only when the print-logo option is enabled.
+- Export one year as PDF, CSV and XLSX and verify totals and row count against the backend list.
+- Open XLSX in Excel or LibreOffice and verify columns, umlauts and automatic filter.
+- Verify annual report export requires `manage_options` and a valid WordPress nonce.
+
+
+## Version 10.4.2 checks
+
+- Start “Fetch missing automatically” with a mix of complete and incomplete reports.
+- Confirm reports with existing weather are skipped in missing-only mode.
+- Confirm “Refresh all” processes reports with existing weather again.
+- Force one API failure and confirm it appears in the error log and in “Retry errors”.
+- Pause and resume a running batch without processing an incident twice.
+- Stop a running batch and confirm the interface returns to an idle state.
+- Test at least 260 reports and confirm no single PHP request processes the complete queue.
+
+
+## Version 10.4.3 checks
+
+Run `php tests/mobile-gallery-test.php` to verify the compact mobile incident image heading and spacing.
+
+- `routing-backup-translation-test.php`: validates schema 6 routing backup fields and English distance-interface strings.
+
+- `archive-seo-alt-test.php` – verifies the configurable archive H1, optional SEO text and automatic incident-image ALT handling introduced in 10.6.15.
+
+## Version 10.6.17 checks
+
+- Run `php tests/incident-url-normalization-test.php`.
+- Verify Einsatzlyzer incident links end in `/` while archive pages and other WordPress post types are unchanged.
+- Enter a custom canonical without the final `/` and confirm SEO diagnostics reports a canonical mismatch.
+- Verify the existing sitemap remains unchanged apart from the already-correct incident URLs.
+
+- `response-area-map-backup-test.php` – prüft Einsatzgebiet-Polygon, Karten-Auswahl und Sicherungsvertrag.
+
+## Version 10.6.19 checks
+
+- Run `php tests/response-area-rendering-test.php`.
+- Verify the response-area boundary is visibly drawn on each enabled Leaflet map.
+- Verify the map still fits to the response-area bounds and incident markers.
+- Verify ordinary Einsatzlyzer UI SVG icons keep their normal size.
+
+## Version 10.6.19 homepage teaser checks
+
+- `homepage-incidents-shortcode-test.php` verifies the server-rendered homepage shortcode, 1–5 settings, image fallback, responsive CSS, existing URL helpers and complete backup/restore contract.
+
+## Version 10.6.25 preview image focus checks
+
+- Run `php tests/preview-image-focus-test.php`.
+- Verify the full-image picker shows a visible crosshair and click/touch/drag moves it immediately.
+- Verify the separate card preview updates at the same time and matches the public card crop.
+- Verify X/Y sliders, numeric values and presets remain synchronized with the crosshair.
+- Verify newly selected, reordered or removed gallery images update the preview without saving first.
+- Verify changing/removing the WordPress featured image updates the preview immediately.
+- Verify the incident editor offers Center, Top, Bottom, Left, Right and Custom focus modes.
+- Verify custom X/Y values are clamped to 0–100 and update the backend preview.
+- Verify archive cards, related incidents and the homepage teaser use the saved focus.
+- Verify existing incidents without focus metadata remain centered at 50% / 50%.
+- Verify complete ZIP backup/restore and CSV export include the preview-focus values.
